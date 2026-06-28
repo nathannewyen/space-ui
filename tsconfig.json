@@ -21,7 +21,7 @@
     "types": ["vitest/globals", "@testing-library/jest-dom"],
     "baseUrl": ".",
     "paths": {
-      "@space-ui/core": ["./src/index.ts"]
+      "@spacing-ui/core": ["./src/index.ts"]
     }
   },
   "include": ["src"],

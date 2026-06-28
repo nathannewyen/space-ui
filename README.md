@@ -1,11 +1,11 @@
-# @space-ui/core
+# @spacing-ui/core
 
 Headless, accessible React UI primitives.
 
 ## Install
 
 ```bash
-pnpm add @space-ui/core
+pnpm add @spacing-ui/core
 ```
 
 `react` and `react-dom` 18 or 19 are peer dependencies.
@@ -17,7 +17,7 @@ pnpm add @space-ui/core
 A fully accessible, unstyled listbox. Bring your own styles.
 
 ```tsx
-import { Select } from "@space-ui/core";
+import { Select } from "@spacing-ui/core";
 
 function Example() {
   const [value, setValue] = useState("apple");
