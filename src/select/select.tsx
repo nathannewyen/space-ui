@@ -93,10 +93,7 @@ const Root = ({ value, onValueChange, children }: SelectProps) => {
     if (!open) return;
     const onPointerDown = (e: PointerEvent) => {
       const target = e.target as Node;
-      if (
-        !triggerRef.current?.contains(target) &&
-        !listboxRef.current?.contains(target)
-      ) {
+      if (!triggerRef.current?.contains(target) && !listboxRef.current?.contains(target)) {
         setOpen(false);
       }
     };
@@ -135,8 +132,7 @@ const Root = ({ value, onValueChange, children }: SelectProps) => {
   return <SelectContext.Provider value={ctxValue}>{children}</SelectContext.Provider>;
 };
 
-interface TriggerProps
-  extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, "children"> {
+interface TriggerProps extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, "children"> {
   children?: Renderable<{ open: boolean; value: string }>;
 }
 
@@ -202,8 +198,7 @@ const Content = ({ children, onKeyDown, ...rest }: ContentProps) => {
       ctx.listboxRef.current?.focus();
       return;
     }
-    const initial =
-      options.find((o) => o.value === ctx.value)?.value ?? options[0]!.value;
+    const initial = options.find((o) => o.value === ctx.value)?.value ?? options[0]!.value;
     ctx.setActiveValue(initial);
     ctx.listboxRef.current?.focus();
     // only re-run on open transition
@@ -305,14 +300,7 @@ interface OptionProps extends Omit<HTMLAttributes<HTMLDivElement>, "children"> {
   children?: Renderable<{ selected: boolean; active: boolean }>;
 }
 
-const Option = ({
-  value,
-  textValue,
-  children,
-  onMouseEnter,
-  onClick,
-  ...rest
-}: OptionProps) => {
+const Option = ({ value, textValue, children, onMouseEnter, onClick, ...rest }: OptionProps) => {
   const ctx = useSelectContext("Option");
   const selected = ctx.value === value;
   const active = ctx.activeValue === value;

@@ -189,14 +189,8 @@ describe("Select", () => {
 
     await user.click(screen.getByRole("combobox"));
 
-    expect(screen.getByRole("option", { name: "Apple" })).toHaveAttribute(
-      "aria-selected",
-      "false"
-    );
-    expect(screen.getByRole("option", { name: "Banana" })).toHaveAttribute(
-      "aria-selected",
-      "true"
-    );
+    expect(screen.getByRole("option", { name: "Apple" })).toHaveAttribute("aria-selected", "false");
+    expect(screen.getByRole("option", { name: "Banana" })).toHaveAttribute("aria-selected", "true");
   });
 
   it("opens with the current value highlighted", async () => {
