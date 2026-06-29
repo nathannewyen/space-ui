@@ -343,4 +343,9 @@ export const Select = Object.assign(Root, {
   Option,
 });
 
-export type { SelectProps, TriggerProps, ContentProps, OptionProps };
+export type {
+  SelectProps,
+  TriggerProps as SelectTriggerProps,
+  ContentProps as SelectContentProps,
+  OptionProps as SelectOptionProps,
+};
