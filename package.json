@@ -1,6 +1,6 @@
 {
   "name": "@spacing-ui/core",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Headless, accessible React UI primitives.",
   "license": "MIT",
   "author": "Nhan Nguyen <nhan13574@gmail.com>",
