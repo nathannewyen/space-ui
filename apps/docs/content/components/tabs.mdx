@@ -1,0 +1,42 @@
+# Tabs
+
+Tab list with roving tabindex, automatic or manual activation, horizontal or vertical.
+
+## Anatomy
+
+```tsx
+import { Tabs } from "@spacing-ui/core";
+
+<Tabs defaultValue="a" orientation="horizontal" activationMode="automatic">
+  <Tabs.List>
+    <Tabs.Trigger value="a">A</Tabs.Trigger>
+    <Tabs.Trigger value="b">B</Tabs.Trigger>
+  </Tabs.List>
+  <Tabs.Content value="a">Panel A</Tabs.Content>
+  <Tabs.Content value="b">Panel B</Tabs.Content>
+</Tabs>;
+```
+
+## API
+
+### `Tabs` (Root)
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `value` / `defaultValue` | `string` | — | Selected tab |
+| `onValueChange` | `(value: string) => void` | — | |
+| `orientation` | `"horizontal" \| "vertical"` | `"horizontal"` | |
+| `activationMode` | `"automatic" \| "manual"` | `"automatic"` | Automatic activates on focus; manual requires Enter/Space |
+
+### `Tabs.List`
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `loop` | `boolean` | `true` | Wrap focus when reaching the end |
+
+## Accessibility
+
+- `role="tablist"`, `role="tab"`, `role="tabpanel"`
+- `aria-controls` / `aria-labelledby` bidirectional
+- Roving tabindex: only the selected tab is in the tab order
+- Keyboard: ArrowRight/Left (horizontal) or ArrowDown/Up (vertical), Home, End

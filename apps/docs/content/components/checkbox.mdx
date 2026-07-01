@@ -1,0 +1,26 @@
+# Checkbox
+
+Supports an `indeterminate` state in addition to true/false.
+
+## Anatomy
+
+```tsx
+import { Checkbox } from "@spacing-ui/core";
+
+<Checkbox defaultChecked="indeterminate" onCheckedChange={(c) => console.log(c)}>
+  Accept terms
+</Checkbox>;
+```
+
+## API
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `checked` / `defaultChecked` | `boolean \| "indeterminate"` | `false` | |
+| `onCheckedChange` | `(checked: boolean \| "indeterminate") => void` | — | |
+| `disabled` | `boolean` | `false` | |
+
+## Accessibility
+
+- `role="checkbox"`, `aria-checked="true"`, `"false"`, or `"mixed"`
+- Space toggles (clicking `indeterminate` advances to `true`)

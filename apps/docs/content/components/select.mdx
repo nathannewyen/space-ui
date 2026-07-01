@@ -1,0 +1,40 @@
+# Select
+
+Headless combobox + listbox with type-ahead and full keyboard navigation.
+
+## Anatomy
+
+```tsx
+import { Select } from "@spacing-ui/core";
+
+<Select defaultValue="apple" onValueChange={(v) => console.log(v)}>
+  {({ value }) => (
+    <>
+      <Select.Trigger>{value ?? "Pick a fruit"}</Select.Trigger>
+      <Select.Content>
+        <Select.Option value="apple">Apple</Select.Option>
+        <Select.Option value="banana">Banana</Select.Option>
+        <Select.Option value="cherry">Cherry</Select.Option>
+      </Select.Content>
+    </>
+  )}
+</Select>;
+```
+
+## API
+
+### `Select` (Root)
+
+| Prop | Type | Description |
+|------|------|-------------|
+| `value` | `string` | Controlled value |
+| `defaultValue` | `string` | Uncontrolled initial value |
+| `onValueChange` | `(value: string) => void` | Fires on selection |
+| `disabled` | `boolean` | Disables the select |
+
+## Accessibility
+
+- Trigger has `role="combobox"`, `aria-expanded`, `aria-controls`, `aria-activedescendant`
+- Listbox has `role="listbox"`; options have `role="option"` with `aria-selected`
+- Keyboard: ArrowDown/Up, Home, End, Enter, Space, Escape, Tab
+- Type-ahead: typing characters within 500ms focuses the matching option

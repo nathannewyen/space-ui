@@ -1,0 +1,43 @@
+# Tooltip
+
+Hover- and focus-activated tooltip with configurable delay and skip-delay window for sibling tooltips.
+
+## Anatomy
+
+```tsx
+import { Tooltip } from "@spacing-ui/core";
+
+<Tooltip.Provider delayDuration={700} skipDelayDuration={300}>
+  <Tooltip>
+    <Tooltip.Trigger>
+      <button>Hover me</button>
+    </Tooltip.Trigger>
+    <Tooltip.Content>I am a tooltip</Tooltip.Content>
+  </Tooltip>
+</Tooltip.Provider>;
+```
+
+`Tooltip.Trigger` clones its child and injects event handlers + `aria-describedby` — bring your own button.
+
+## API
+
+### `Tooltip.Provider`
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `delayDuration` | `number` | `700` | ms before opening on hover |
+| `skipDelayDuration` | `number` | `300` | ms after one closes during which the next opens immediately |
+
+### `Tooltip` (Root)
+
+| Prop | Type | Description |
+|------|------|-------------|
+| `open` / `defaultOpen` | `boolean` | |
+| `onOpenChange` | `(open: boolean) => void` | |
+| `delayDuration` | `number` | Per-instance override of provider delay |
+
+## Accessibility
+
+- Content has `role="tooltip"`
+- Trigger gets `aria-describedby` pointing to content when open
+- Escape closes the tooltip

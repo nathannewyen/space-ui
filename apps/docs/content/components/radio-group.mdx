@@ -1,0 +1,33 @@
+# RadioGroup
+
+A group of mutually-exclusive options with roving tabindex.
+
+## Anatomy
+
+```tsx
+import { RadioGroup } from "@spacing-ui/core";
+
+<RadioGroup defaultValue="medium" onValueChange={(v) => console.log(v)}>
+  <RadioGroup.Item value="small">Small</RadioGroup.Item>
+  <RadioGroup.Item value="medium">Medium</RadioGroup.Item>
+  <RadioGroup.Item value="large">Large</RadioGroup.Item>
+</RadioGroup>;
+```
+
+## API
+
+### `RadioGroup` (Root)
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `value` / `defaultValue` | `string` | — | |
+| `onValueChange` | `(value: string) => void` | — | |
+| `name` | `string` | auto-generated | Native form name |
+| `disabled` | `boolean` | `false` | |
+| `orientation` | `"horizontal" \| "vertical"` | `"vertical"` | |
+
+## Accessibility
+
+- `role="radiogroup"`, items have `role="radio"`
+- Roving tabindex: only the checked item (or first item) is in the tab order
+- Keyboard: ArrowDown/Up (vertical) or ArrowRight/Left (horizontal)

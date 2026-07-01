@@ -2,3 +2,5 @@ node_modules
 dist
 coverage
 pnpm-lock.yaml
+apps/*/.next
+apps/*/next-env.d.ts
